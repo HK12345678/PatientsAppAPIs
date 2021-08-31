@@ -1,0 +1,73 @@
+D:\PatientAPIs\Domain layer\bin\Domain layer.dll.config
+D:\PatientAPIs\Domain layer\bin\Domain layer.dll
+D:\PatientAPIs\Domain layer\bin\Domain layer.pdb
+D:\PatientAPIs\Domain layer\bin\roslyn\csc.exe
+D:\PatientAPIs\Domain layer\bin\roslyn\csc.exe.config
+D:\PatientAPIs\Domain layer\bin\roslyn\csc.rsp
+D:\PatientAPIs\Domain layer\bin\roslyn\csi.exe
+D:\PatientAPIs\Domain layer\bin\roslyn\csi.exe.config
+D:\PatientAPIs\Domain layer\bin\roslyn\csi.rsp
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.Managed.Core.targets
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\PatientAPIs\Domain layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.AppContext.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Collections.Immutable.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Console.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Globalization.Calendars.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.IO.Compression.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.IO.FileSystem.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Net.Http.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Net.Sockets.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Reflection.Metadata.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.ValueTuple.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Xml.XmlDocument.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Xml.XPath.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\PatientAPIs\Domain layer\bin\roslyn\vbc.exe
+D:\PatientAPIs\Domain layer\bin\roslyn\vbc.exe.config
+D:\PatientAPIs\Domain layer\bin\roslyn\vbc.rsp
+D:\PatientAPIs\Domain layer\bin\roslyn\VBCSCompiler.exe
+D:\PatientAPIs\Domain layer\bin\roslyn\VBCSCompiler.exe.config
+D:\PatientAPIs\Domain layer\bin\EntityFramework.dll
+D:\PatientAPIs\Domain layer\bin\EntityFramework.SqlServer.dll
+D:\PatientAPIs\Domain layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\PatientAPIs\Domain layer\bin\PatientAPIs.dll
+D:\PatientAPIs\Domain layer\bin\System.Web.Http.dll
+D:\PatientAPIs\Domain layer\bin\System.Web.Http.WebHost.dll
+D:\PatientAPIs\Domain layer\bin\System.Net.Http.Formatting.dll
+D:\PatientAPIs\Domain layer\bin\Newtonsoft.Json.dll
+D:\PatientAPIs\Domain layer\bin\EntityFramework.xml
+D:\PatientAPIs\Domain layer\bin\EntityFramework.SqlServer.xml
+D:\PatientAPIs\Domain layer\bin\PatientAPIs.pdb
+D:\PatientAPIs\Domain layer\bin\PatientAPIs.dll.config
+D:\PatientAPIs\Domain layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\PatientAPIs\Domain layer\bin\System.Web.Http.xml
+D:\PatientAPIs\Domain layer\bin\System.Web.Http.WebHost.xml
+D:\PatientAPIs\Domain layer\bin\System.Net.Http.Formatting.xml
+D:\PatientAPIs\Domain layer\obj\Debug\Domain layer.csproj.AssemblyReference.cache
+D:\PatientAPIs\Domain layer\obj\Debug\Domain layer.csproj.CoreCompileInputs.cache
+D:\PatientAPIs\Domain layer\obj\Debug\Domain layer.csproj.CopyComplete
+D:\PatientAPIs\Domain layer\obj\Debug\Domain layer.dll
+D:\PatientAPIs\Domain layer\obj\Debug\Domain layer.pdb
