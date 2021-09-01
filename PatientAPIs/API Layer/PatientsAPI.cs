@@ -38,20 +38,20 @@ namespace APIs
             return response;
         }
 
-        [Route("api/DeletePatient")]
-        [HttpGet]
-        public HttpResponseMessage DeletePatient(int PatientID)
-        {
-            _tblPatientsRepository.Delete(PatientID);
-            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
-            return response;
-        }
-
-        [Route("api/UpdatePatient")]
-        [HttpGet]
+        [Route("api/UpdatePatientRecord")]
+        [HttpPut]
         public HttpResponseMessage UpdatePatient(tblPatient patientDetails)
         {
             var result = _tblPatientsRepository.Update(patientDetails);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, result);
+            return response;
+        }
+
+        [Route("api/InsertPatientRecord")]
+        [HttpPost]
+        public HttpResponseMessage InsertPatient(tblPatient patientDetails)
+        {
+            var result = _tblPatientsRepository.Insert(patientDetails);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, result);
             return response;
         }
