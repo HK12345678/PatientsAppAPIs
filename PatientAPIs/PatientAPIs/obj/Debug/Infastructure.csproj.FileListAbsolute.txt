@@ -75,3 +75,4 @@ D:\PatientAPIs\PatientAPIs\bin\Models\PatientsEF.Context.cs
 D:\PatientAPIs\PatientAPIs\bin\Models\PatientsEF.cs
 D:\PatientAPIs\PatientAPIs\bin\Models\PatientsEF.Designer.cs
 D:\PatientAPIs\PatientAPIs\bin\Models\tblPatient.cs
+D:\PatientAPIs\PatientAPIs\obj\Debug\Infastructure.csproj.AssemblyReference.cache

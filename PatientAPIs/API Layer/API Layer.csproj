@@ -98,8 +98,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="PatientsAPI.cs" />
+    <Compile Include="Services\IServices.cs" />
+    <Compile Include="Controller\PatientsAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Services.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
