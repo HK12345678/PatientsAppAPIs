@@ -22,24 +22,24 @@
         }
       }
     },
-    "patient-app": {
+    "ipapp": {
       "projectType": "application",
-      "root": "apps/patient-app",
-      "sourceRoot": "apps/patient-app/src",
-      "prefix": "ipoc",
+      "root": "apps/ipapp",
+      "sourceRoot": "apps/ipapp/src",
+      "prefix": "papp",
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/patient-app",
-            "index": "apps/patient-app/src/index.html",
-            "main": "apps/patient-app/src/main.ts",
-            "polyfills": "apps/patient-app/src/polyfills.ts",
-            "tsConfig": "apps/patient-app/tsconfig.app.json",
+            "outputPath": "dist/apps/ipapp",
+            "index": "apps/ipapp/src/index.html",
+            "main": "apps/ipapp/src/main.ts",
+            "polyfills": "apps/ipapp/src/polyfills.ts",
+            "tsConfig": "apps/ipapp/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/patient-app/src/assets",
+              "apps/ipapp/src/assets",
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -47,9 +47,9 @@
               }
             ],
             "styles": [
-              "apps/patient-app/src/styles.scss",
+              "apps/ipapp/src/styles.scss",
               {
-                "input": "apps\\patient-app/src/theme/variables.scss"
+                "input": "apps\\ipapp/src/theme/variables.scss"
               }
             ],
             "scripts": []
@@ -70,8 +70,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "apps/patient-app/src/environments/environment.ts",
-                  "with": "apps/patient-app/src/environments/environment.prod.ts"
+                  "replace": "apps/ipapp/src/environments/environment.ts",
+                  "with": "apps/ipapp/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -91,10 +91,10 @@
           "executor": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "patient-app:build:production"
+              "browserTarget": "ipapp:build:production"
             },
             "development": {
-              "browserTarget": "patient-app:build:development"
+              "browserTarget": "ipapp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,23 +102,23 @@
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "patient-app:build"
+            "browserTarget": "ipapp:build"
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/patient-app/src/**/*.ts",
-              "apps/patient-app/src/**/*.html"
+              "apps/ipapp/src/**/*.ts",
+              "apps/ipapp/src/**/*.html"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/patient-app"],
+          "outputs": ["coverage/apps/ipapp"],
           "options": {
-            "jestConfig": "apps/patient-app/jest.config.js",
+            "jestConfig": "apps/ipapp/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -205,28 +205,53 @@
         }
       }
     },
-    "patient-app-e2e": {
-      "root": "apps/patient-app-e2e",
-      "sourceRoot": "apps/patient-app-e2e/src",
+    "ipapp-data-access": {
+      "projectType": "library",
+      "root": "libs/ipapp/data-access",
+      "sourceRoot": "libs/ipapp/data-access/src",
+      "prefix": "papp",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ipapp/data-access"],
+          "options": {
+            "jestConfig": "libs/ipapp/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ipapp/data-access/src/**/*.ts",
+              "libs/ipapp/data-access/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "ipapp-e2e": {
+      "root": "apps/ipapp-e2e",
+      "sourceRoot": "apps/ipapp-e2e/src",
       "projectType": "application",
       "targets": {
         "e2e": {
           "executor": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/patient-app-e2e/cypress.json",
-            "tsConfig": "apps/patient-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "patient-app:serve:development"
+            "cypressConfig": "apps/ipapp-e2e/cypress.json",
+            "devServerTarget": "ipapp:serve:development",
+            "tsConfig": "apps/ipapp-e2e/tsconfig.json"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "patient-app:serve:production"
+              "devServerTarget": "ipapp:serve:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/patient-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/ipapp-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -235,7 +260,7 @@
       "projectType": "library",
       "root": "libs/ui",
       "sourceRoot": "libs/ui/src",
-      "prefix": "ipoc",
+      "prefix": "papp",
       "targets": {
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -273,5 +298,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "patient-app"
+  "defaultProject": "ipapp"
 }

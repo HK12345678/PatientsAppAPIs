@@ -1,5 +1,5 @@
 {
-  "npmScope": "ipoc",
+  "npmScope": "papp",
   "affected": {
     "defaultBase": "master"
   },
@@ -30,12 +30,15 @@
     "data": {
       "tags": []
     },
-    "patient-app": {
+    "ipapp": {
       "tags": []
     },
-    "patient-app-e2e": {
+    "ipapp-data-access": {
+      "tags": []
+    },
+    "ipapp-e2e": {
       "tags": [],
-      "implicitDependencies": ["patient-app"]
+      "implicitDependencies": ["ipapp"]
     },
     "ui": {
       "tags": []

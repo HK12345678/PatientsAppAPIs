@@ -1,0 +1,7 @@
+{
+  "name": "ipapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

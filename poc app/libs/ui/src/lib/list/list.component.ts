@@ -1,22 +1,16 @@
+
 import { Component, OnInit, Input } from '@angular/core';
-import { IPatientRecord } from '@ipoc/data';
+import { IPatientRecord } from '@papp/data';
 import { Router } from '@angular/router';
 @Component({
-
-  selector: 'ipoc-list',
+  selector: 'papp-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
   @Input() PatientRecordArray!: IPatientRecord[];
-  constructor() { }
 
-  ngOnInit(): void {
-  }
-  nextpage() {
-    //this.route.navigate(['lib/add']);
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }
-
-
