@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, IonicModule],
   declarations: [
     ListComponent
   ],

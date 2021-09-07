@@ -1,5 +1,5 @@
 {
-  "npmScope": "poc",
+  "npmScope": "ipoc",
   "affected": {
     "defaultBase": "master"
   },
@@ -30,12 +30,12 @@
     "data": {
       "tags": []
     },
-    "patient-records-app": {
+    "patient-app": {
       "tags": []
     },
-    "patient-records-app-e2e": {
+    "patient-app-e2e": {
       "tags": [],
-      "implicitDependencies": ["patient-records-app"]
+      "implicitDependencies": ["patient-app"]
     },
     "ui": {
       "tags": []

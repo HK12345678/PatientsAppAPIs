@@ -1,4 +1,4 @@
-export interface IPatientRec {
+export interface IPatientRecord {
   title: string;
   FirstName: string;
   LastName: string;

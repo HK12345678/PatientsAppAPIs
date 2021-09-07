@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@poc/data": ["libs/data/src/index.ts"],
-      "@poc/ui": ["libs/ui/src/index.ts"]
+      "@ipoc/data": ["libs/data/src/index.ts"],
+      "@ipoc/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
