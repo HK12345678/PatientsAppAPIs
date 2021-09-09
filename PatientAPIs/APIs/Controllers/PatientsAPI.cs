@@ -12,48 +12,57 @@ using Infastructure.Models;
 
 namespace APIs
 {
-    public class tblPatientsController : ApiController
+    public class PatientsController : ApiController
     {
-        private IServices<tblPatient> _tblPatientsRepository = null;
+        private IServices<tblPatient> _PatientsRepository = null;
 
-        public tblPatientsController()
+        public PatientsController()
         {
-            this._tblPatientsRepository = new Services<tblPatient>();
+            this._PatientsRepository = new Services<tblPatient>();
         }
 
         [Route("api/GetPatientsList")]
         [HttpGet]
         public HttpResponseMessage GetPatientsList()
         {
-            var result = _tblPatientsRepository.GetAll();
+            var result = _PatientsRepository.GetAll();
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, result);
             return response;
         }
 
         [Route("api/GetPatient")]
         [HttpGet]
-        public HttpResponseMessage GetPatient(int PatientId)
+        public HttpResponseMessage GetPatientRecord(int PatientId)
         {
-            var result = _tblPatientsRepository.GetById(PatientId);
+            var result = _PatientsRepository.GetById(PatientId);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, result);
             return response;
         }
 
         [Route("api/UpdatePatientRecord")]
         [HttpPut]
-        public HttpResponseMessage UpdatePatient(tblPatient patientDetails)
+        public HttpResponseMessage UpdatePatientRecord(tblPatient patientDetails)
         {
-            var result = _tblPatientsRepository.Update(patientDetails);
+            var result = _PatientsRepository.Update(patientDetails);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, result);
             return response;
         }
 
         [Route("api/InsertPatientRecord")]
         [HttpPost]
-        public HttpResponseMessage InsertPatient(tblPatient patientDetails)
+        public HttpResponseMessage InsertPatientRecord(tblPatient patientDetails)
         {
-            var result = _tblPatientsRepository.Insert(patientDetails);
+            var result = _PatientsRepository.Insert(patientDetails);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, result);
+            return response;
+        }
+
+        [Route("api/DeletePatientRecord")]
+        [HttpPost]
+        public HttpResponseMessage DeletePatientRecord(int ID)
+        {
+            _PatientsRepository.Delete(ID);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
         }
 

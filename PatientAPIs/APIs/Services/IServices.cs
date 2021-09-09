@@ -12,5 +12,6 @@ namespace APIs
         T GetById(object Id);
         T Insert(T obj);
         T Update(T obj);
+        void Delete(object ID);
     }
 }
