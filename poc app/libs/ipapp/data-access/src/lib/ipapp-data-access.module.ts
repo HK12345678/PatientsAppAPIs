@@ -12,4 +12,4 @@ import { uiEffects } from './+state/ui.effects';
     EffectsModule.forFeature([uiEffects]),
   ],
 })
-export class QuotesDataAccessModule {}
+export class UIDataAccessModule {}

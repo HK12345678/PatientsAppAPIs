@@ -9,7 +9,10 @@ export class AddComponent implements OnInit {
 
   constructor() { }
 
+  back(){}
+  buttonClick(){}
+  
   ngOnInit(): void {
   }
-
+  
 }

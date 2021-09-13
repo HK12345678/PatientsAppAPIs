@@ -11,17 +11,18 @@ export class AppComponent {
   PatientRecordArray: IPatientRecord[] = [];
 
   constructor(private http: HttpClient) {
-    this.fetch();
+   // this.fetch();
   }
 
   fetch() {
-    this.http.get<IPatientRecord[]>('/api/todos').subscribe((t) =>
-     (this.PatientRecordArray = t));
+    this.http.get<IPatientRecord[]>('https://localhost:44338/api/GetPatientsList').
+     subscribe((t) =>
+      (this.PatientRecordArray = t));
   }
 
   addTodo() {
-    this.http.post('/api/addTodo', {}).subscribe(() => {
-      this.fetch();
-    });
+    // this.http.post('/api/addTodo', {}).subscribe(() => {
+    //   this.fetch();
+    // });
   }
 }

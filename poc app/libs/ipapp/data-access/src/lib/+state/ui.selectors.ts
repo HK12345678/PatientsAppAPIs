@@ -7,7 +7,7 @@ export const selectUiState = createFeatureSelector
   fromUIReducer.uiFeatureKey
 );
 
-const { selectAll } = fromUIReducer.patientRecordAdapter
+export const { selectAll } = fromUIReducer.patientRecordAdapter
 .getSelectors();
 
 export const getPatientRecordsLoaded = createSelector(
@@ -15,7 +15,7 @@ export const getPatientRecordsLoaded = createSelector(
   (state: fromUIReducer.ExtendedInterfacePatRecord) => state.loaded
 );
 
-export const getQuotesError = createSelector(
+export const getPatientRecordsError = createSelector(
   selectUiState,
   (state: fromUIReducer.ExtendedInterfacePatRecord) => state.error
 );
@@ -25,7 +25,7 @@ export const getAllPatientRecords = createSelector(selectUiState,
   selectAll(state)
 );
 
-export const getRandomQuotes = createSelector(getAllPatientRecords,
+export const getPatientRecords = createSelector(getAllPatientRecords,
    (IPatientRecordArray) => {
     return {
       ...IPatientRecordArray,
