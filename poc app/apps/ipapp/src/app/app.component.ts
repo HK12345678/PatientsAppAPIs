@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IPatientRecord } from '@papp/data';
+//import { IPatientRecord } from '@papp/data';
 
 @Component({
   selector: 'papp-root',
@@ -8,16 +8,16 @@ import { IPatientRecord } from '@papp/data';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  PatientRecordArray: IPatientRecord[] = [];
+  //PatientRecordArray: IPatientRecord[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor() {
    // this.fetch();
   }
 
   fetch() {
-    this.http.get<IPatientRecord[]>('https://localhost:44338/api/GetPatientsList').
-     subscribe((t) =>
-      (this.PatientRecordArray = t));
+    // this.http.get<IPatientRecord[]>('https://localhost:44338/api/GetPatientsList').
+    //  subscribe((t) =>
+    //   (this.PatientRecordArray = t));
   }
 
   addTodo() {

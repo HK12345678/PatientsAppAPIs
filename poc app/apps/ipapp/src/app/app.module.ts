@@ -44,11 +44,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from 'libs/ui/src/lib/List/list.component';
 import {HttpClientModule} from '@angular/common/http';
+import { Action, StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent, ListComponent],
   entryComponents: [],
-  imports: [HttpClientModule, BrowserModule, RouterModule, CommonModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [HttpClientModule, BrowserModule, RouterModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, StoreModule.forRoot({}),
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   exports:[AppRoutingModule, ListComponent]

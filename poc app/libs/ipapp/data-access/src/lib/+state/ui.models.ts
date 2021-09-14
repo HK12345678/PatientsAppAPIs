@@ -5,5 +5,5 @@ export interface IPatientRecord {
     BirthDate: string;
     Age: string;
     Active: string;
-    ID: number;
+    id: number;
   }

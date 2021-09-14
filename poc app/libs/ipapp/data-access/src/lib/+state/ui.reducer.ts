@@ -5,38 +5,43 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 export const uiFeatureKey = 'ui';
 
-export interface ExtendedInterfacePatRecord extends EntityState<IPatientRecord> {
-  selectedId?: string | number; 
+export interface ExtendedInterfacePatRecord {
+  Recs : IPatientRecord[],
   loaded: boolean; 
   error?: string | null;
 }
 
-export interface PatientRecordPartialState {
-  readonly [uiFeatureKey]: ExtendedInterfacePatRecord;
-}
-
-
 export const patientRecordAdapter: EntityAdapter<IPatientRecord> = createEntityAdapter<IPatientRecord>();
 
-export const initialState: ExtendedInterfacePatRecord = patientRecordAdapter.getInitialState({
-  loaded: false,
-});
+export const initialState: ExtendedInterfacePatRecord = {
+  Recs: [],
+  loaded: false, 
+  error: ''
+};
 
+export function reducer(state = initialState, action: UiActions.PatientRecordsActions): ExtendedInterfacePatRecord {
+  switch (action.type) {
 
-export const patientRecordReducer = createReducer(
-  initialState,
+    case UiActions.PatientRecordActionTypes.LoadPatientRecords:
+      return {
+        ...state
+      }
 
-  on(UiActions.init, (state) => ({ ...state, loaded: false, error: null })),
-  on(UiActions.loadPatientRecordSuccess, (state, { PatientRecordArray }) =>
-  patientRecordAdapter.setAll(PatientRecordArray, { ...state, loaded: true })
-  ),
-  on(UiActions.loadPatientRecordFailure, (state, { error }) => ({
-    ...state,
-    error,
-  }))
-);
+    case UiActions.PatientRecordActionTypes.LoaddPatientRecordsSuccess:
+      return {
+        ...state,
+        Recs: action.payload.PatientRecordArray,
+        error: ''
+      }
 
-export function reducer(state: ExtendedInterfacePatRecord | 
-                      undefined, action: Action) {
-  return patientRecordReducer(state, action);
+    case UiActions.PatientRecordActionTypes.LoaddPatientRecordsFailure:
+      return {
+        ...state,
+        Recs: [],
+        error: action.payload.error
+      }
+
+    default:
+      return state;
+  }
 }

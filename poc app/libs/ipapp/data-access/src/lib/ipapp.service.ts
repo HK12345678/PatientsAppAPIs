@@ -13,13 +13,13 @@ export class IpappService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<{ PatientRecordArray: IPatientRecord[] }>(`${this.API_URL}/api/GetPatientsList`)
+    return this.http.get<{ records: IPatientRecord[] }>(`${this.API_URL}/api/GetPatientsList`)
       .pipe(
         map(response => {
-          return response.PatientRecordArray.map((PatientRecordArray, index) => {
+          return response.records.map((record, index) => {
             return {
-              id: index,
-              ...PatientRecordArray
+              //id: index,
+              ...record
             };
           });
         })

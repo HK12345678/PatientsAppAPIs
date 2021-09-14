@@ -7,22 +7,22 @@ import { fetch } from '@nrwl/angular';
 
 
 @Injectable()
-export class uiEffects {
+export class uiEffects 
+{
   init$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(UiActions.init),
-      fetch({
+            this.actions$.pipe (ofType(UiActions.PatientRecordActionTypes.LoadPatientRecords),
+                              fetch({
         run: (action) => {
           return this.ipappService.getAll()
             .pipe(
-              map(PatientRecordArray => UiActions.loadPatientRecordSuccess
+              map(PatientRecordArray => new UiActions.LoaddPatientRecordsSuccess
                 ({ PatientRecordArray }))
             );
         },
 
         onError: (action, error) => {
           console.error('Error', error);
-          return UiActions.loadPatientRecordFailure({ error });
+          return new UiActions.LoaddPatientRecordsFailure({ error });
         },
       })
     )

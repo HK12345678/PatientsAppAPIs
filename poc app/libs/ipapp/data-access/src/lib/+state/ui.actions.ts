@@ -1,14 +1,26 @@
-import { createAction, props } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { IPatientRecord } from './ui.models'
 
-export const init = createAction('[List Page] Init');
+export enum PatientRecordActionTypes {
+  LoadPatientRecords = '[PatientRecord] Load Patient Records',
+  LoaddPatientRecordsSuccess = '[PatientRecord] Load Patient Success',
+  LoaddPatientRecordsFailure = '[PatientRecord] Load Patient Failure',
+}
 
-export const loadPatientRecordSuccess = createAction(
-  '[UI/API] Load Patient Record Success',
-  props<{ PatientRecordArray: IPatientRecord[] }>()
-);
+export class LoadPatientRecords implements Action {
+  readonly type = PatientRecordActionTypes.LoadPatientRecords;
+}
 
-export const loadPatientRecordFailure = createAction(
-  '[UI/API] Load Patient Record Failure',
-  props<{ error: any }>()
-);
+export class LoaddPatientRecordsSuccess implements Action {
+  readonly type = PatientRecordActionTypes.LoaddPatientRecordsSuccess;
+  constructor(public payload: { PatientRecordArray: IPatientRecord[] }) { }
+}
+
+export class LoaddPatientRecordsFailure implements Action {
+  readonly type = PatientRecordActionTypes.LoaddPatientRecordsFailure;
+  constructor(public payload: { error: string }) { }
+}
+
+export type PatientRecordsActions = LoadPatientRecords | LoaddPatientRecordsSuccess | LoaddPatientRecordsFailure;
+
+

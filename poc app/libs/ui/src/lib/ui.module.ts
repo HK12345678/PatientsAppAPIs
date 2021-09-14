@@ -31,6 +31,8 @@ import { IonicModule } from '@ionic/angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { AddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+
 
 @NgModule({
   imports: [CommonModule, IonicModule, BrowserModule, RouterModule],
