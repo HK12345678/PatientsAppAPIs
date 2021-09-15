@@ -9,11 +9,13 @@ export const uiFeatureKey = 'ui';
 
 export interface ExIPatRecState {
   Recs : IPatientRecord[],
+  Rec: IPatientRecord,
   error : string;
 }
 
 export const initialState: ExIPatRecState = {
   Recs: [],
+  Rec: {} as IPatientRecord,
   error: ''
 };
 
@@ -34,6 +36,26 @@ export function reducer(state = initialState, action: UiActions.PatientRecordsAc
       }
 
     case UiActions.PatientRecordActionTypes.LoaddPatientRecordsFailure:
+      return {
+        ...state,
+        Recs: [],
+        error: action.payload.error
+      }
+
+      case UiActions.PatientRecordActionTypes.LoadPatientIDRecord:
+    
+    return {
+        ...state
+      }
+
+    case UiActions.PatientRecordActionTypes.LoaddPatientIDRecordSuccess:
+      return {
+        ...state,
+        Rec: action.payload.PatientRecord,
+        error: ''
+      }
+
+    case UiActions.PatientRecordActionTypes.LoaddPatientIDRecordFailure:
       return {
         ...state,
         Recs: [],

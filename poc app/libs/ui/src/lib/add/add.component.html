@@ -1,9 +1,16 @@
-<ion-content [fullscreen]="true" >
+<form [formGroup]="Form">
+  <!-- <label class="sr-only" for="Name">Name</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="FirstName" placeholder="FirstName" required>
+    </div> -->
+
+ <ion-content [fullscreen]="true" >
     <ion-list>
        
       <ion-item>
         <ion-label position="floating">Title</ion-label>
-        <ion-select cancelText="Nah" okText="Okay!">
+        <ion-select  class="form-control" formControlName="Title"
+        cancelText="Nah" okText="Okay!">
           <ion-select-option value="Mr">Mr</ion-select-option>
           <ion-select-option value="Mrs">Mrs</ion-select-option>
           <ion-select-option value="Miss">Miss</ion-select-option>
@@ -13,23 +20,26 @@
       
     <ion-item>
       <ion-label position="floating">First Name</ion-label>
-      <ion-input></ion-input>
+      <ion-input  class="form-control" formControlName="FirstName" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Last Name</ion-label>
-      <ion-input></ion-input>
+      <ion-input  class="form-control" formControlName="LastName"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">BirthDate</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09" value="2002-09-23T15:03:46.789"></ion-datetime>
+      <ion-label position="floating"
+       >BirthDate</ion-label>
+      <ion-datetime 
+      class="form-control" formControlName="BirthDate"
+      displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09" value="2002-09-23T15:03:46.789"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Age</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number"  class="form-control" formControlName="Age"></ion-input>
     </ion-item>  
     <ion-item>
-      <ion-label>Active</ion-label>
-      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label >Active</ion-label>
+      <ion-checkbox slot="start" class="form-control" formControlName="Active"></ion-checkbox>
     </ion-item>
     <ion-row>
     <ion-item >
@@ -48,3 +58,4 @@
     </ion-row>
     </ion-list>
     </ion-content>
+  </form>

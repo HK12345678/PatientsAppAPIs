@@ -33,9 +33,11 @@ import { AddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { UIDataAccessModule } from '@papp/ipapp/data-access';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [CommonModule, IonicModule, BrowserModule, RouterModule,
+    FormsModule, ReactiveFormsModule,
     RouterModule.forChild([
       { path: '', component: ListComponent } 
     ]),

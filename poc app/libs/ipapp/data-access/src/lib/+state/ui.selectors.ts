@@ -12,22 +12,15 @@ export const getPatientRecords = createSelector(
   getPatientRecordsFeatureState,
   state => state.Recs
 )
-
-// export const getPatientRecords = createSelector(
-//   getPatientRecordsFeatureState,
-//   (state: fromUIReducer.ExtendedInterfacePatRecord) => {
-//     debugger;
-//       return state.Recs;
-//   }
-// );
-
-//     createSelector(getPatientRecordsFeatureState, (state): IPatientRecord[] => {
-//         return state && state.Recs;
-//     }
-// );
-
   
 export const getError = createSelector(
   getPatientRecordsFeatureState,
   state => state.error
 )
+
+
+export const getPatientRecordByID = createSelector(
+  getPatientRecordsFeatureState,
+  state => state.Rec
+)
+  

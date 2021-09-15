@@ -21,7 +21,7 @@ namespace APIs
             this._PatientsRepository = new Services<tblPatient>();
         }
 
-        [Route("api/GetPatientsList")]
+        [Route("api/GetPatientsRecordList")]
         [HttpGet]
         public HttpResponseMessage GetPatientsList()
         {
@@ -30,7 +30,7 @@ namespace APIs
             return response;
         }
 
-        [Route("api/GetPatient")]
+        [Route("api/GetPatientRecordByID")]
         [HttpGet]
         public HttpResponseMessage GetPatientRecord(int PatientId)
         {

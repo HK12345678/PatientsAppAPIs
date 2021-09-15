@@ -1,14 +1,20 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
 import {  catchError, exhaustMap, map, mergeMap } from 'rxjs/operators';
 import * as UiActions from './ui.actions';
 import { IpappService } from '../ipapp.service';
 import { fetch } from '@nrwl/angular';
 import { EmptyError } from 'rxjs/internal/util/EmptyError';
+import { Action } from '@ngrx/store';
+import { Observable } from 'rxjs/internal/Observable';
+import { of } from 'rxjs/internal/observable/of';
+import { IPatientRecord } from './ui.models';
 
 @Injectable()
 export class uiEffects 
  {
+   
   LoadPatientRecords$ = createEffect(() =>
             this.actions$.pipe (ofType(UiActions.PatientRecordActionTypes.LoadPatientRecords),
                               fetch({
@@ -24,43 +30,39 @@ export class uiEffects
           return new UiActions.LoaddPatientRecordsFailure({ error });
         },
       })
-    )
+    ));
 
-    // loadMovie$ = createEffect(() =>
-    //   this.action$.pipe(
-    //     ofType(UiActions.PatientRecordActionTypes.LoadPatientRecords),
-    //     exhaustMap(() =>
-    //     this.ipappService.getAll().pipe(
-    //         map((PatientRecordArray) => new UiActions.LoaddPatientRecordsSuccess({PatientRecordArray})),
-    //         catchError(() => EmptyError)
-    //       )
-    //     )
-    //   )
-
-  //     loadUsers$ = createEffect(() =>
-  // this.actions$.pipe(
-  //   ofType(UiActions.PatientRecordActionTypes.LoadPatientRecords),
-  //   mergeMap(() => this.ipappService.getAll()
-  //     .pipe(
-  //       map(PatientRecordArray => ({ type: UiActions.PatientRecordActionTypes, payload: PatientRecordArray }))
-  //     ))
-  //   ),
-  //   //map(mappedUsers => this.store.dispatch(UserActions.saveUser({mappedUsers}))) // - Either dispatch an action to save mapped users
-  //   { dispatch: false} // or add this param so that this effect does not need to dispatch new action
-  );
-
-
-//   loadUsers$ = createEffect(() =>
-//   this.actions$.pipe(
-//     ofType(UiActions.PatientRecordActionTypes.LoadPatientRecords),
-//     mergeMap(() => this.ipappService.getAll()
-//       .pipe(
-//         map(PatientRecordArray => ({ type: UiActions.PatientRecordActionTypes, payload: PatientRecordArray }))
-//       ))
-//     ),
-//     //map(mappedUsers => this.store.dispatch(UserActions.saveUser({mappedUsers}))) // - Either dispatch an action to save mapped users
-//     { dispatch: false} // or add this param so that this effect does not need to dispatch new action
-//   );
+    // LoadPatientRecord$ = createEffect(() =>
+    //         this.actions$.pipe (ofType(UiActions.PatientRecordActionTypes.LoadPatientIDRecord),
+    //                           fetch({
+    //     run: (action1) => {
+    //       return this.ipappService.getByID(1)
+    //         .pipe(
+    //           map(PatientRecord => new UiActions.LoaddPatientRecordByIDSuccess
+    //             ({ PatientRecord }))
+    //         );
+    //     },
+    //     onError: (action1, error) => {
+    //       console.error('Error', error);
+    //       return new UiActions.LoaddPatientRecordByIDFailure({ error });
+    //     },
+    //   })
+    // ));
+    @Effect()
+    loadCustomer$: Observable<Action> = this.actions$.pipe(
+      ofType<UiActions.LoadPatientRecordByID>(
+        UiActions.PatientRecordActionTypes.LoadPatientIDRecord
+      ),
+      mergeMap((action: UiActions.LoadPatientRecordByID) =>
+      this.ipappService.getByID(action.payload).pipe(
+          map(
+            (PatientRecord) =>
+              new UiActions.LoaddPatientRecordByIDSuccess({PatientRecord})
+          ),
+          catchError(err => of(new UiActions.LoaddPatientRecordByIDFailure(err)))
+        )
+      )
+    );
 
   constructor(private actions$: Actions, private ipappService: IpappService) {}
 }

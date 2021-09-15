@@ -14,21 +14,12 @@ export class IpappService {
   private API_URL = 'https://localhost:44338';
 
   constructor(private http: HttpClient) { }
-  // getAll() {
-  //   return this.http.get<{ records: IPatientRecord[] }>(`${this.API_URL}/api/GetPatientsList`)
-  //     .pipe(
-  //       map(response => {
-  //         return response.records.map((record) => {//, index) => {
-  //           return {
-  //             //id: index,
-  //             ...record
-  //           };
-  //         });
-  //       })
-  //     );
-  // }
 
   getAll(): Observable<IPatientRecord[]> {
-    return this.http.get<IPatientRecord[]>(`${this.API_URL}/api/GetPatientsList/`);
+    return this.http.get<IPatientRecord[]>(`${this.API_URL}/api/GetPatientsRecordList/`);
+}
+
+ getByID(PatientId: number): Observable<IPatientRecord> {
+  return this.http.get<IPatientRecord>(`${this.API_URL}/api/GetPatientRecordByID?PatientId=${PatientId}`);
 }
 }

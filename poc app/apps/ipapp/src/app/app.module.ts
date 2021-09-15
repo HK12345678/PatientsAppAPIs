@@ -19,11 +19,14 @@ import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { uiEffects } from 'libs/ipapp/data-access/src/lib/+state/ui.effects';
 import { AddComponent } from 'libs/ui/src/lib/Add/add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, ListComponent, AddComponent],
   entryComponents: [],
-  imports: [HttpClientModule, BrowserModule, RouterModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, 
+  imports: [
+    FormsModule, ReactiveFormsModule,
+    HttpClientModule, BrowserModule, RouterModule, CommonModule, IonicModule.forRoot(), AppRoutingModule, 
     //StoreModule.forRoot(reducer),
     StoreModule.forRoot({}),
     StoreModule.forFeature("ui",reducer),
