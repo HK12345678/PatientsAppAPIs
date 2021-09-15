@@ -1,4 +1,7 @@
+/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'papp-add',
@@ -7,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
-  back(){}
+  back(){this.route.navigate(['list']);}
   buttonClick(){}
   
   ngOnInit(): void {

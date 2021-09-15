@@ -1,3 +1,5 @@
+/* eslint-disable no-debugger */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Action, createReducer, on } from '@ngrx/store';
 import * as UiActions from './ui.actions';
 import { IPatientRecord} from  './ui.models';
@@ -5,25 +7,22 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 export const uiFeatureKey = 'ui';
 
-export interface ExtendedInterfacePatRecord {
+export interface ExIPatRecState {
   Recs : IPatientRecord[],
-  loaded: boolean; 
-  error?: string | null;
+  error : string;
 }
 
-export const patientRecordAdapter: EntityAdapter<IPatientRecord> = createEntityAdapter<IPatientRecord>();
-
-export const initialState: ExtendedInterfacePatRecord = {
+export const initialState: ExIPatRecState = {
   Recs: [],
-  loaded: false, 
   error: ''
 };
 
-export function reducer(state = initialState, action: UiActions.PatientRecordsActions): ExtendedInterfacePatRecord {
+export function reducer(state = initialState, action: UiActions.PatientRecordsActions): ExIPatRecState {
   switch (action.type) {
 
     case UiActions.PatientRecordActionTypes.LoadPatientRecords:
-      return {
+    
+    return {
         ...state
       }
 

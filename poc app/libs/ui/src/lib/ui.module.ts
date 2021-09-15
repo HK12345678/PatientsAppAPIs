@@ -32,10 +32,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
-
+import { UIDataAccessModule } from '@papp/ipapp/data-access';
 
 @NgModule({
-  imports: [CommonModule, IonicModule, BrowserModule, RouterModule],
+  imports: [CommonModule, IonicModule, BrowserModule, RouterModule,
+    RouterModule.forChild([
+      { path: '', component: ListComponent } 
+    ]),
+    UIDataAccessModule],
   declarations: [AddComponent, ListComponent],
   exports: [ AddComponent, ListComponent],
 })
