@@ -32,22 +32,6 @@ export class uiEffects
       })
     ));
 
-    // LoadPatientRecord$ = createEffect(() =>
-    //         this.actions$.pipe (ofType(UiActions.PatientRecordActionTypes.LoadPatientIDRecord),
-    //                           fetch({
-    //     run: (action1) => {
-    //       return this.ipappService.getByID(1)
-    //         .pipe(
-    //           map(PatientRecord => new UiActions.LoaddPatientRecordByIDSuccess
-    //             ({ PatientRecord }))
-    //         );
-    //     },
-    //     onError: (action1, error) => {
-    //       console.error('Error', error);
-    //       return new UiActions.LoaddPatientRecordByIDFailure({ error });
-    //     },
-    //   })
-    // ));
     @Effect()
     loadByIDr$: Observable<Action> = this.actions$.pipe(
       ofType<UiActions.LoadPatientRecordByID>(

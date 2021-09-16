@@ -35,6 +35,12 @@ export class ListComponent implements OnInit {
     this.route.navigate(['add', record.ID]);
   }
 
+  RemoveRecord(record : IPatientRecord)
+  {
+    //debugger;
+    this.store.dispatch(new UIActions.DeletePatientRecord(Number(record.ID)));
+  }
+
   Add()
   {
     this.route.navigate(['add', -1]);

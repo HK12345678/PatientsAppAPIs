@@ -41,12 +41,6 @@ namespace Domain
         }
         public void Delete(T entityToDelete)
         {
-            if (context.Entry(entityToDelete).State == EntityState.Detached)
-            {
-                dbSet.Attach(entityToDelete);
-
-            }
-            //context.Entry(entityToDelete).State = EntityState.Deleted;
             dbSet.Remove(entityToDelete);
             Save();
         }
