@@ -46,7 +46,9 @@ namespace Domain
                 dbSet.Attach(entityToDelete);
 
             }
+            //context.Entry(entityToDelete).State = EntityState.Deleted;
             dbSet.Remove(entityToDelete);
+            Save();
         }
 
         public T Update(T obj)

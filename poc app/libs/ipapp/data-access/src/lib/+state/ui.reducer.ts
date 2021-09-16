@@ -62,6 +62,60 @@ export function reducer(state = initialState, action: UiActions.PatientRecordsAc
         error: action.payload.error
       }
 
+      case UiActions.PatientRecordActionTypes.DeletePatientRecord:
+    
+    return {
+        ...state
+      }
+
+    case UiActions.PatientRecordActionTypes.DeletePatientRecordFailure:
+      //debugger;
+      return {
+        ...state,
+        error: action.payload.error
+      }
+
+      case UiActions.PatientRecordActionTypes.AddPatientRecord:
+    
+        return {
+            ...state
+          }
+    
+        case UiActions.PatientRecordActionTypes.AddPatientRecordSuccess:
+          return {
+            ...state,
+            Rec: action.payload,
+            error: ''
+          }
+    
+        case UiActions.PatientRecordActionTypes.AddPatientRecordFailure:
+          return {
+            ...state,
+            Recs: [],
+            error: action.payload.error
+          }
+
+          
+      case UiActions.PatientRecordActionTypes.EditPatientRecord:
+    
+        return {
+            ...state
+          }
+    
+        case UiActions.PatientRecordActionTypes.EditPatientRecordSuccess:
+          return {
+            ...state,
+            Rec: action.payload,
+            error: ''
+          }
+    
+        case UiActions.PatientRecordActionTypes.EditPatientRecordFailure:
+          return {
+            ...state,
+            Recs: [],
+            error: action.payload.error
+          }
+
     default:
       return state;
   }

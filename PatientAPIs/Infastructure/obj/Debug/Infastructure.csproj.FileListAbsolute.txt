@@ -17,6 +17,7 @@ D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\bin\Debug\EntityFramewor
 D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\bin\Debug\EntityFramework.SqlServer.dll
 D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\bin\Debug\EntityFramework.xml
 D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\bin\Debug\EntityFramework.SqlServer.xml
+D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\obj\Debug\Infastructure.csproj.AssemblyReference.cache
 D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\obj\Debug\Infastructure.csproj.CoreCompileInputs.cache
 D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\obj\Debug\Infastructure.csproj.CopyComplete
 D:\PatientsAp\PatientsAppAPIs\PatientAPIs\Infastructure\obj\Debug\Infastructure.dll

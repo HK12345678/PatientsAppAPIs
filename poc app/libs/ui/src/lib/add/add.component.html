@@ -1,9 +1,4 @@
 <form [formGroup]="Form">
-  <!-- <label class="sr-only" for="Name">Name</label>
-    <div class="input-group mb-2 mr-sm-2">
-      <input type="text" class="form-control" formControlName="FirstName" placeholder="FirstName" required>
-    </div> -->
-
  <ion-content [fullscreen]="true" >
     <ion-list>
        
@@ -42,15 +37,15 @@
       <ion-checkbox slot="start" class="form-control" formControlName="Active"></ion-checkbox>
     </ion-item>
     <ion-row>
+       
     <ion-item >
-      <ion-button >Add</ion-button>
+      <ion-button (click) = 'Save()' >Save</ion-button>
     </ion-item>
     
     <ion-item >
-      <ion-button >Save</ion-button>
+      <ion-button (click) = 'Delete()'>Delete</ion-button>
     </ion-item>
-    
-    
+
     <ion-item>
       <ion-button (click) = 'back()' >View Records</ion-button>
     </ion-item>

@@ -23,4 +23,18 @@ export const getPatientRecordByID = createSelector(
   getPatientRecordsFeatureState,
   state => state.Rec
 )
-  
+
+export const DeletePatientRecordSel = createSelector(
+  getPatientRecordsFeatureState,
+  state => state.Rec
+)
+
+export const addPatientRecord = createSelector(
+  getPatientRecordsFeatureState,
+  state => state.Rec
+)
+
+export const editPatientRecord = createSelector(
+  getPatientRecordsFeatureState,
+  state => state.Rec
+)

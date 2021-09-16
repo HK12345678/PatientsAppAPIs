@@ -10,6 +10,19 @@ export enum PatientRecordActionTypes {
   LoadPatientIDRecord = '[PatientRecord] Load Patient Record By ID',
   LoaddPatientIDRecordSuccess = '[PatientRecord] Load Patient By ID Success',
   LoaddPatientIDRecordFailure = '[PatientRecord] Load Patient By ID Failure',
+
+  DeletePatientRecord = '[PatientRecord] Delete Patient Record',
+  DeletePatientRecordSuccess = '[PatientRecord] Delete Patient Success',
+  DeletePatientRecordFailure = '[PatientRecord] Delete Patient Failure',
+
+
+  AddPatientRecord = '[PatientRecord] Add Patient Record',
+  AddPatientRecordSuccess = '[PatientRecord] Add Patient Success',
+  AddPatientRecordFailure = '[PatientRecord] Add Patient Failure',
+
+  EditPatientRecord = '[PatientRecord] Edit Patient Record',
+  EditPatientRecordSuccess = '[PatientRecord] Edit Patient Success',
+  EditPatientRecordFailure = '[PatientRecord] Edit Patient Failure',
 }
 
 export class LoadPatientRecords implements Action {
@@ -44,8 +57,57 @@ export class LoaddPatientRecordByIDFailure implements Action {
   constructor(public payload: { error: string }) { }
 }
 
+export class DeletePatientRecord implements Action {
+  readonly type = PatientRecordActionTypes.DeletePatientRecord;
+  constructor(
+    public payload:  number ) {
+    }
+}
+
+export class DeletePatientRecordSuccess implements Action {
+  readonly type = PatientRecordActionTypes.DeletePatientRecordSuccess;
+}
+
+export class DeletePatientRecordFailure implements Action {
+  readonly type = PatientRecordActionTypes.DeletePatientRecordFailure;
+  constructor(public payload: { error: string }) { }
+}
+
+
+export class AddPatientRecord implements Action {
+  readonly type = PatientRecordActionTypes.AddPatientRecord;
+  constructor(public payload: IPatientRecord ) { }
+}
+
+export class AddPatientRecordSuccess implements Action {
+  readonly type = PatientRecordActionTypes.AddPatientRecordSuccess;
+  constructor(public payload: IPatientRecord ) { }
+}
+
+export class AddPatientRecordFailure implements Action {
+  readonly type = PatientRecordActionTypes.AddPatientRecordFailure;
+  constructor(public payload: { error: string }) { }
+}
+
+export class EditPatientRecord implements Action {
+  readonly type = PatientRecordActionTypes.EditPatientRecord;
+  constructor(public payload: IPatientRecord ) { }
+}
+
+export class EditPatientRecordSuccess implements Action {
+  readonly type = PatientRecordActionTypes.EditPatientRecordSuccess;
+  constructor(public payload: IPatientRecord ) { }
+}
+
+export class EditPatientRecordFailure implements Action {
+  readonly type = PatientRecordActionTypes.EditPatientRecordFailure;
+  constructor(public payload: { error: string }) { }
+}
 
 export type PatientRecordsActions = LoadPatientRecords | LoaddPatientRecordsSuccess | LoaddPatientRecordsFailure  |
-LoadPatientRecordByID | LoaddPatientRecordByIDSuccess | LoaddPatientRecordByIDFailure;
+LoadPatientRecordByID | LoaddPatientRecordByIDSuccess | LoaddPatientRecordByIDFailure |
+DeletePatientRecord | DeletePatientRecordSuccess | DeletePatientRecordFailure |
+AddPatientRecord | AddPatientRecordSuccess | AddPatientRecordFailure |
+EditPatientRecord | EditPatientRecordSuccess | EditPatientRecordFailure;
 
 

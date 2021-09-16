@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-debugger */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -8,27 +9,61 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { IPatientRecord, UIActions, UISelector } from '@papp/ipapp/data-access';
-import { Observable } from 'rxjs/internal/Observable';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'papp-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss']
 })
+
 export class AddComponent implements OnInit {
   errorMessage = undefined;
-  //PatientRecordRetrieved$!: Observable<IPatientRecord>;
   PatientRecordRetrieved$ = this.store.select(UISelector.getPatientRecordByID);
+
   //PatientRecordRetrieved = {} as IPatientRecord;
   Form!: FormGroup;
-  constructor(private fb: FormBuilder, private route: Router, private store: Store, private routed: ActivatedRoute) {
-    
-   }
+  private id: number;
+
+  constructor(private fb: FormBuilder, private route: Router, private store: Store, private routed: ActivatedRoute)
+  {
+    this.id = Number(this.routed.snapshot.paramMap.get('id'));
+  }
   
-  back(){
-    this.route.navigate(['list']);}
+  back()
+  {
+    this.route.navigate(['list']);
+  }
+
   buttonClick(){}
+
+  Delete()
+  {
+    this.store.dispatch(new UIActions.DeletePatientRecord(Number(this.routed.snapshot.paramMap.get('id'))));
+    this.route.navigate(['list']);
+  }
+
+  Save()
+  {
+    const newRecord: IPatientRecord = {
+      Title: this.Form.get("Title")!.value,
+      FirstName: this.Form.get("FirstName")!.value,
+      LastName: this.Form.get("LastName")!.value,
+      BirthDate: this.Form.get("BirthDate")!.value,
+      Age: this.Form.get("Age")!.value,
+      Active: this.Form.get("Active")!.value,
+      ID: this.id};
+
+    if (this.id > 0)
+    {
+      //debugger;
+      this.store.dispatch(new UIActions.EditPatientRecord(newRecord));
+    }
+    else
+    {
+      this.store.dispatch(new UIActions.AddPatientRecord(newRecord));
+    } 
+    this.route.navigate(['list']);
+  }
   
   ngOnInit(): void {
     this.Form = this.fb.group({
@@ -40,9 +75,15 @@ export class AddComponent implements OnInit {
       Active: ["", Validators.required],
     })
 
-    this.store.dispatch(new UIActions.LoadPatientRecordByID(Number(this.routed.snapshot.paramMap.get('id'))));
+    this.Form.reset();    
     
-    // this.store.pipe(select(UISelector.getPatientRecordByID)).subscribe(
+
+    if (this.id > 0)
+    {
+      // debugger;
+      this.store.dispatch(new UIActions.LoadPatientRecordByID(this.id));
+
+      // this.store.pipe(select(UISelector.getPatientRecordByID)).subscribe(
     //   patientRecords => 
     //   {
     //     this.PatientRecordRetrieved = patientRecords;
@@ -61,5 +102,7 @@ export class AddComponent implements OnInit {
         });
       }
     })
+    }
+    
 }
 }

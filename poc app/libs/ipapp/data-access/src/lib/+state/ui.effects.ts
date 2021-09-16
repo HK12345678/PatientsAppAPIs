@@ -14,7 +14,7 @@ import { IPatientRecord } from './ui.models';
 @Injectable()
 export class uiEffects 
  {
-   
+  @Effect()
   LoadPatientRecords$ = createEffect(() =>
             this.actions$.pipe (ofType(UiActions.PatientRecordActionTypes.LoadPatientRecords),
                               fetch({
@@ -49,7 +49,7 @@ export class uiEffects
     //   })
     // ));
     @Effect()
-    loadCustomer$: Observable<Action> = this.actions$.pipe(
+    loadByIDr$: Observable<Action> = this.actions$.pipe(
       ofType<UiActions.LoadPatientRecordByID>(
         UiActions.PatientRecordActionTypes.LoadPatientIDRecord
       ),
@@ -60,6 +60,55 @@ export class uiEffects
               new UiActions.LoaddPatientRecordByIDSuccess({PatientRecord})
           ),
           catchError(err => of(new UiActions.LoaddPatientRecordByIDFailure(err)))
+        )
+      )
+    );
+
+    @Effect()
+    Delete$: Observable<Action> = this.actions$.pipe(
+      ofType<UiActions.DeletePatientRecord>(
+        UiActions.PatientRecordActionTypes.DeletePatientRecord
+      ),
+      mergeMap((action: UiActions.DeletePatientRecord) =>
+      this.ipappService.Delete(action.payload).pipe(
+          map(
+            (PatientRecord) =>
+              new UiActions.DeletePatientRecordSuccess()
+          ),
+          catchError(err => of(new UiActions.DeletePatientRecordFailure(err)))
+        )
+      )
+    );
+
+
+    @Effect()
+    Add$: Observable<Action> = this.actions$.pipe(
+      ofType<UiActions.AddPatientRecord>(
+        UiActions.PatientRecordActionTypes.AddPatientRecord
+      ),
+      mergeMap((action: UiActions.AddPatientRecord) =>
+      this.ipappService.Add(action.payload).pipe(
+          map(
+            (PatientRecord) =>
+              new UiActions.AddPatientRecordSuccess(PatientRecord)
+          ),
+          catchError(err => of(new UiActions.AddPatientRecordFailure(err)))
+        )
+      )
+    );
+
+    @Effect()
+    Edit$: Observable<Action> = this.actions$.pipe(
+      ofType<UiActions.EditPatientRecord>(
+        UiActions.PatientRecordActionTypes.EditPatientRecord
+      ),
+      mergeMap((action: UiActions.EditPatientRecord) =>
+      this.ipappService.Update(action.payload).pipe(
+          map(
+            (PatientRecord) =>
+              new UiActions.EditPatientRecordSuccess(PatientRecord)
+          ),
+          catchError(err => of(new UiActions.EditPatientRecordFailure(err)))
         )
       )
     );

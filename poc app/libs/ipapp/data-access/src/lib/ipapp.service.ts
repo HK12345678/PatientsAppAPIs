@@ -16,10 +16,26 @@ export class IpappService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<IPatientRecord[]> {
+    //debugger;
     return this.http.get<IPatientRecord[]>(`${this.API_URL}/api/GetPatientsRecordList/`);
 }
 
  getByID(PatientId: number): Observable<IPatientRecord> {
   return this.http.get<IPatientRecord>(`${this.API_URL}/api/GetPatientRecordByID?PatientId=${PatientId}`);
+}
+
+Delete(PatientId: number): Observable<IPatientRecord> {
+  //debugger;
+  return this.http.get<IPatientRecord>(`${this.API_URL}/api/DeletePatientRecord?ID=${PatientId}`);
+}
+
+Add(PatientRecord: IPatientRecord): Observable<IPatientRecord> {
+  //debugger;
+  return this.http.post<IPatientRecord>(`${this.API_URL}/api/InsertPatientRecord`, PatientRecord);
+}
+
+Update(PatientRecord: IPatientRecord): Observable<IPatientRecord> {
+  //debugger;
+  return this.http.put<IPatientRecord>(`${this.API_URL}/api/UpdatePatientRecord/`, PatientRecord);
 }
 }

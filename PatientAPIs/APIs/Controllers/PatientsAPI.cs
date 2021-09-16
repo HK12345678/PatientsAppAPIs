@@ -58,7 +58,7 @@ namespace APIs
         }
 
         [Route("api/DeletePatientRecord")]
-        [HttpPost]
+        [HttpGet]
         public HttpResponseMessage DeletePatientRecord(int ID)
         {
             _PatientsRepository.Delete(ID);

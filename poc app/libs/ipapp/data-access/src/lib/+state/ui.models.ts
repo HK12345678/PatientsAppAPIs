@@ -16,7 +16,7 @@
     "BirthDate": Date,
     "Age": number,
     "Active": boolean,
-    "ID": number
+    "ID"?: number
   }
   //   constructor(
   //     Title?: string,

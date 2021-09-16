@@ -1,19 +1,12 @@
-<!-- 
-<div *ngFor="let Record of PatientRecordsRetrieved">
-      <h3>FirstName</h3><span>{{Record.FirstName}}</span>
-    </div> -->
 
-    <!-- <tr *ngFor="let Record of (records$ |async)">
-      <th scope="row">{{Record.FirstName}}</th> -->
-
-<!-- <h2>List of users</h2>
-
-<pre>{{ PatientRecordsRetrieved | json }}</pre> -->
-<!-- <pre>{{ records$ | async | json }}</pre> -->
 <ion-list>
-      <ion-item *ngFor="let record of PatientRecordsRetrieved" (click)='nextpage(record)'>
+      <ion-item *ngFor="let record of PatientRecordsRetrieved" (click)='openRecDetails(record)'>
          <button ion-button full >
             {{record.FirstName}} {{record.LastName}}
          </button>              
       </ion-item>
    </ion-list> 
+
+   <ion-item >
+      <ion-button (click) = 'Add()' >Add</ion-button>
+    </ion-item>
